@@ -46,7 +46,9 @@ export CPP = xcrun clang++
 #else
 #export __LINUX__:= 1	
 #export CFLAGS += -stdlib=libc++ -m64 -I$(ROOTSYS)/include 
+#export CFLAGS += -std=c++11 -m64 -I$(ROOTSYS)/include 
 #export SHAREDSWITCH = -shared -Wl,-soname,#NO ENDING SPACE
+#export SHAREDSWITCH = -shared -Wl,-rpath,
 #export CPP = g++
 #endif
 export COMPILESHARED   = $(CPP) $(LFLAGS) $(SHAREDSWITCH)#NO ENDING SPACE
